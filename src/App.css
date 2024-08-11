@@ -34,7 +34,7 @@
   color: #ff9f00;
 }
 .content div strong {
-  color: #ff9f00; /* Màu cam cho nhãn mạnh */
+  color: #ff9f00;
   font-weight: bold;
 }
 .content img {
@@ -42,20 +42,20 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(141, 17, 17, 0.5);
   margin-right: 30px;
-  position: relative; /* Thay đổi vị trí của ảnh */
+  position: relative;
 }
 .button-overlay {
   position: absolute;
-  bottom: 0px; /* Khoảng cách từ dưới cùng của ảnh */
-  left: 14%; /* Căn giữa nút theo chiều ngang */
-  transform: translateX(-50%); /* Căn giữa nút theo chiều ngang */
-  background-color: rgba(0, 0, 0, 0.5); /* Nền màu tối với độ trong suốt */
+  bottom: 0px;
+  left: 14%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 5px;
 }
 .button-overlay button {
-  background-color: #991c7a; /* Màu nền nút */
-  color: #ffffff; /* Màu chữ nút */
+  background-color: #991c7a;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   padding: 10px 20px;
@@ -63,8 +63,8 @@
   cursor: pointer;
 }
 .header {
-  width: 1491px; /* Đặt chiều rộng cố định */
-  height: 60px; /* Đặt chiều cao cố định */
+  width: 1491px;
+  height: 60px;
   padding: 10px;
   justify-content: space-between;
   align-items: left;
@@ -74,16 +74,16 @@
   align-items: center;
 }
 .main-content {
-  margin-top: 60px; /* Chiều cao của Header để nội dung không bị che khuất */
+  margin-top: 60px;
   padding: 1rem;
   flex: 1;
 }
 
 .home-link {
   font-size: 1.5em;
-  color: #007bff;
+  color: #d16a15;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 .home-link:hover {
@@ -147,7 +147,8 @@ p {
   -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
   box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
 }
-
+.home-link {
+}
 .search input {
   flex: 1;
   border: none;
@@ -155,7 +156,6 @@ p {
   font-family: var(--font-raleway);
   font-weight: 500;
   padding-right: 1rem;
-
   outline: none;
   color: #a1a1a1;
   background: #1f2123;
