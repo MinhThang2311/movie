@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import SearchIcon from "./search.svg";
-import "./App.css";
+import SearchIcon from "../search.svg";
+import "../App.css";
 
 const Search = ({ searchMovies }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,7 +14,7 @@ const Search = ({ searchMovies }) => {
   const handleSearch = (e) => {
     e.preventDefault();
     searchMovies(searchTerm);
-    navigate("/");
+    navigate(`/`);
   };
 
   return (

@@ -1,35 +1,37 @@
-import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import MovieDetail from "./MovieDetail";
-import Search from "./Search";
-import MovieList from "./MovieList";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-
-const API_URL = "http://www.omdbapi.com?apikey=11cda148";
-
+import { publicRoutes } from "./routes";
+import Header from "./pages/Header";
 const App = () => {
-  const [movies, setMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const searchMovies = async (title) => {
-    const query = title || "Spiderman";
-    const response = await fetch(`${API_URL}&s=${query}`);
-    const data = await response.json();
-    setMovies(data.Search);
+  const searchMovies = (title) => {
+    setSearchTerm(title);
+    console.log(`Searching for ${title}`);
   };
-
-  useEffect(() => {
-    searchMovies("");
-  }, []);
-
   return (
-    <div className="app">
-      <h1>Movie Land</h1>
-      <Search searchMovies={searchMovies} />
-      <Routes>
-        <Route path="/" element={<MovieList movies={movies} />} />
-        <Route path="/movie/:id" element={<MovieDetail />} />
-      </Routes>
-    </div>
+    <Router>
+      <div className="app">
+        <Header searchMovies={searchMovies} />
+        <div className="main-content">
+          <Routes>
+            {publicRoutes.map((route, index) => {
+              const Page = route.component;
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={
+                    <Page searchTerm={searchTerm} searchMovies={searchMovies} />
+                  }
+                />
+              );
+            })}
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 };
 

@@ -26,6 +26,7 @@
 .content {
   display: flex;
   align-items: flex-start;
+  position: relative;
 }
 .content h2 {
   font-size: 2.5rem;
@@ -41,8 +42,53 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(141, 17, 17, 0.5);
   margin-right: 30px;
+  position: relative; /* Thay đổi vị trí của ảnh */
+}
+.button-overlay {
+  position: absolute;
+  bottom: 0px; /* Khoảng cách từ dưới cùng của ảnh */
+  left: 14%; /* Căn giữa nút theo chiều ngang */
+  transform: translateX(-50%); /* Căn giữa nút theo chiều ngang */
+  background-color: rgba(0, 0, 0, 0.5); /* Nền màu tối với độ trong suốt */
+  padding: 10px;
+  border-radius: 5px;
+}
+.button-overlay button {
+  background-color: #991c7a; /* Màu nền nút */
+  color: #ffffff; /* Màu chữ nút */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.header {
+  width: 1491px; /* Đặt chiều rộng cố định */
+  height: 60px; /* Đặt chiều cao cố định */
+  padding: 10px;
+  justify-content: space-between;
+  align-items: left;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+}
+.main-content {
+  margin-top: 60px; /* Chiều cao của Header để nội dung không bị che khuất */
+  padding: 1rem;
+  flex: 1;
 }
 
+.home-link {
+  font-size: 1.5em;
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
 .content div {
   max-width: 800px;
   color: white;
@@ -59,6 +105,9 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -117,22 +166,6 @@ p {
   height: 35px;
   cursor: pointer;
 }
-
-/* .search button {
-  padding: 20px 40px;
-  border-radius: 0.5rem;
-  margin-left: 15px;
-  color: #a1a1a1;
-  font-family: var(--font-raleway);
-  font-weight: 900;
-  letter-spacing: 0.75px;
-  font-size: 1.25rem;
-  cursor: pointer;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-} */
-
 .empty {
   width: 100%;
   margin-top: 3rem;
@@ -157,7 +190,6 @@ p {
   align-items: center;
   flex-wrap: wrap;
 }
-
 .movie {
   width: 310px;
   height: 460px;
